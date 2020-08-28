@@ -5,11 +5,16 @@ function createEmployeeRecord (arraySt){
       firstName : arraySt[0],
       familyName: arraySt[1],
       title : arraySt[2],
+<<<<<<< HEAD
       payPerHour: arraySt[3],
+=======
+      payPerHour: arraySt[3]
+>>>>>>> 6c58acc21e7be8097831f33d4881d9849e204207
       timeInEvents : [],
       timeOutEvents:[]
   }
 }
+<<<<<<< HEAD
 
 function createEmployeeRecords (arraySt){
   return arraySt.map (x => createEmployeeRecord(x));
@@ -37,16 +42,16 @@ function createTimeOutEvent (object , date){
   return object;
 }
 
-function hoursWorkedOnDate (object , date){
+function hoursWorkedOnDate (date){
   let arrDa = date.split(" ") ;
-  for (let i = 0 ; i < object.timeInEvents.length ;i++ ) {
-    if(arrDa[0] === object.timeInEvents[i].date){
-      return (object.timeOutEvents[i].hour - object.timeInEvents[i].hour )/ 100;
+  for (let i = 0 ; i < this.timeInEvents.length ;i++ ) {
+    if(arrDa[0] === this.timeInEvents[i].date){
+      return (this.timeOutEvents[i].hour - this.timeInEvents[i].hour )/ 100;
     }
   }
 }
 
-function wagesEarnedOnDate (object , date){
+function wagesEarnedOnDate ( date){
   return hoursWorkedOnDate(object , date) * object.payPerHour ;
 }
 
